@@ -250,6 +250,8 @@ const handlePlantsClick = (e) => {
     setShowCart(false);
   };
 
+  /*
+  
   const [addedToCart, setAddedToCart] = useState({})
 
   const dispatch = useDispatch();
@@ -262,7 +264,17 @@ const handlePlantsClick = (e) => {
     }))
   }
 
-  const totalItems = useSelector(state => state.cart.totalItems)
+*/
+
+    const addedToCart = useSelector(state => state.cart.addedToCart)
+    
+    const dispatch = useDispatch();
+
+    const handleAddToCart = (product) => {
+        dispatch(addItem(product));
+    }
+
+    const totalItems = useSelector(state => state.cart.totalItems)
 
     return (
         <div>
